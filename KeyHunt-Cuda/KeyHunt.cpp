@@ -279,7 +279,7 @@ bool KeyHunt::checkPrivKey(std::string addr, Int& key, int32_t incr, bool mode)
 	k.Add((uint64_t)incr);
 	k2.Add((uint64_t)incr);
 	// Check addresses
-	Point p = secp->ComputePublicKey(&k);
+	Point p = secp->ComputePublicKey(&k2);
 	std::string px = p.x.GetBase16();
 	std::string chkAddr = secp->GetAddress(mode, p);
 	if (chkAddr != addr) {
